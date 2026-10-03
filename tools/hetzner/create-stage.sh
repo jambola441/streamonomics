@@ -4,7 +4,7 @@
 set -euo pipefail
 key="${1:?usage: create-stage.sh <ssh-key-name> [type] [location]}"
 type="${2:-cx43}"
-loc="${3:-nbg1}"
+loc="${3:-fsn1}"   # nbg1 had no cx43 capacity on 2026-10-03
 name="stage"
 here="$(cd "$(dirname "$0")" && pwd)"
 

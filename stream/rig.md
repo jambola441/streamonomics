@@ -3,7 +3,7 @@
 Decision and reasoning: `projects/stream-manager/decisions.md` (2026-10-03: Broadcast rig).
 
 ```
- Hetzner VM nbg1 (Ubuntu + XFCE) — the stage MacBook (Apple Silicon) — A/V + encoder
+ Hetzner VM fsn1 (Ubuntu + XFCE) — the stage MacBook (Apple Silicon) — A/V + encoder
  ├─ Claude Code + this repo + `sm` CLI        ├─ OBS ───────── stream ─────────► Twitch
  ├─ editor, terminal, browser       ─────►    │   ├─ window capture: remote desktop into VM
  ├─ `sm serve` overlays :7777  ◄── Tailscale ─┤   ├─ browser sources: http://<vm>:7777/...
@@ -15,7 +15,7 @@ Decision and reasoning: `projects/stream-manager/decisions.md` (2026-10-03: Broa
 ## Pieces
 | Piece | Where | Notes |
 |---|---|---|
-| Stage VM | Hetzner, Nuremberg (`nbg1`), `cx43` | 8 vCPU / 16 GB, ~$18/mo. Ubuntu 24.04 + XFCE. Created by `tools/hetzner/create-stage.sh` + `cloud-init.yaml`. US (`ash`) is ~4x the price; the ~100 ms typing lag only affects the remote desktop, not viewers. |
+| Stage VM | Hetzner, Falkenstein (`fsn1`), `cx43`, server name `stage` | 8 vCPU / 16 GB, ~$18/mo. Ubuntu 24.04 + XFCE. Created by `tools/hetzner/create-stage.sh` + `cloud-init.yaml`. US (`ash`) is ~4x the price; the ~100 ms typing lag only affects the remote desktop, not viewers. |
 | Remote desktop | VM → Mac | NoMachine (good quality on CPU-only VMs); xrdp as fallback. Capture its window in OBS. |
 | Private network | VM ↔ Mac | Tailscale on both. Nothing exposed publicly: overlays and OBS WebSocket only on the tailnet. |
 | OBS | Mac | Apple VT hardware encoder. Scenes per `stream/obs/README.md`. WebSocket on, password set. |

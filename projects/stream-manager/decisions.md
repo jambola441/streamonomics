@@ -31,3 +31,8 @@ ADR-lite, newest at the bottom. `**Decision:** open` = still undecided.
 **Context:** Live Hetzner pricing: Ashburn `cpx31` (4 vCPU/8 GB) is ~$73/mo; Nuremberg `cx43` (8 vCPU/16 GB) is ~$18/mo. Hetzner bills stopped servers, so "stop between streams" saves nothing.
 **Decision:** Nuremberg `cx43`, always on.
 **Why:** 2x the machine for a quarter of the price. ~100 ms latency only affects typing over remote desktop; the stream itself goes out from the Mac.
+
+## 2026-10-03: Stage VM landed in Falkenstein (fsn1)
+**Context:** Creating `cx43` in Nuremberg failed with `resource_unavailable` (no capacity).
+**Decision:** Created it in Falkenstein (`fsn1`), the other German site: same price and latency.
+**Why:** Nothing changes in practice; `create-stage.sh` now defaults to `fsn1`.
