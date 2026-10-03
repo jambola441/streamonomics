@@ -7,7 +7,7 @@ Phases are ordered. Check items off as you go. Claude can update this file on re
 - [ ] Lock the name and handle (Twitch, YouTube, X, TikTok). Check availability for `streamonomics`
 - [ ] Write `stream/branding.md`: tagline, voice, 2–3 colors, font
 - [ ] Decide what's **off-limits on stream**: client names, API keys, private dashboards (see Safety below)
-- [x] Pick the first projects: **stream-manager** (#1), **turonomics**, **terpenomics** (see `projects/`)
+- [x] Pick the first projects: **stream-manager** (#1), **turonomics**, **terpenomics**, **van-build** (see `projects/`)
 - [x] Set the slots: Tue evening, Thu evening, one weekend day (see `stream/schedule.md`)
 - [ ] Lock Saturday vs. Sunday and exact times
 

@@ -10,4 +10,4 @@ Three fixed slots a week. Times are suggested (ET). Adjust, then stick to them, 
 
 The weekend slot is the long "big swing" session: new builds, Ship It episodes, Shop Floor (Autodesk) days. The weeknight slots are steady progress on ongoing products.
 
-Until Stream Manager v0 ships, the weekend slot belongs to it.
+Until Stream Manager v0 ships, the weekend slot belongs to it. After that, weekends rotate between **Ship It** builds and **Shop Floor** (van build-out: CAD, planning, eventually IRL build days).
