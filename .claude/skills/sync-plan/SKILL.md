@@ -35,7 +35,7 @@ Work from the parser's JSON, not your own reading of the markdown. Use each deli
 ## 3. Resolve the team and project
 
 1. **Team:** find the team named in `frontmatter.linear.team` (default `Streamonomics`). If it doesn't exist, stop: "Create a Linear team named Streamonomics, then re-run." Never create teams. Note the team's issue prefix (e.g. `STR`) and its workflow states; find the Done state = the state of type `completed` (prefer the one named "Done") and the Canceled state = type `canceled`.
-2. **Project:** if `linear.project_id` is set, fetch that project. Otherwise search the team's projects by exact name `linear.project`. If found by name, plan to write its ID back. If not found, plan to **create** it (name = `linear.project`, team, description = the plan's Goal). Creation waits for the confirmation in step 6.
+2. **Project:** if `linear.project_id` is set, fetch that project. Otherwise search the team's projects by exact name `linear.project`. If found by name, plan to write its ID back. If not found, plan to **create** it (name = `linear.project`, team, description = the plan's Goal). Creation is automatic (step 6).
    - If `project_id` is set but the project is gone (deleted/inaccessible): stop and ask. Don't silently create a duplicate.
 3. **Labels:** if any deliverable has a `slot` tag, look up team labels named `slot:<value>` (e.g. `slot:tue`). Plan to create missing ones if the label tool allows it; otherwise skip labels and say so once.
 4. **Estimates:** if any deliverable has `est`, the issue tool must accept an estimate. If the team has estimates off (the call rejects it, or the team settings say so), skip estimates and say so once.
@@ -68,9 +68,9 @@ Collect every ID referenced in plan.md: all deliverable `id`s plus parking-lot `
 
 **Parking lot:** never synced. Nothing under `## Parking lot` creates or updates anything.
 
-## 6. Dry run, then confirm
+## 6. Summary, then apply (auto-save)
 
-Show one compact summary per project, then ask once (e.g. "Apply? yes / no / edit"):
+The owner has pre-approved issue saves: **creating projects, milestones, and issues, updating them, and marking them Done happen without asking.** Show one compact summary per project, then go straight to step 7:
 
 ```
 stream-manager → Linear project "Stream Manager" (create)
@@ -86,13 +86,13 @@ stream-manager → Linear project "Stream Manager" (create)
 ```
 
 Rules:
-- Nothing is written to Linear or plan.md before the user says yes. If there are no changes, say "in sync" and stop.
-- Orphan cancels are opt-in per item: the user can approve the sync and still say no to (or pick among) the cancels.
-- If the user says "edit", let them change plan.md, then start over from step 1.
+- Creates, updates, and Done transitions apply automatically. If there are no changes, say "in sync" and stop.
+- **Still ask first** (only this): orphan cancels, opt-in per item, listed by ID and title. Apply everything else, then ask about cancels at the end.
+- Mismatches (`!` lines) are reported, never auto-resolved.
 
 ## 7. Apply
 
-Order: project → labels → milestones → issues (creates, then updates, then done) → approved cancels.
+Order: project → labels → milestones → issues (creates, then updates, then done) → cancels the user approved.
 
 Write IDs back **as you go** (right after each create succeeds), so an interrupted run never loses an ID:
 

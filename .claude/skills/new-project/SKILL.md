@@ -44,7 +44,7 @@ python3 tools/plan_parse.py projects/<slug>/plan.md
 Fix any `error` warnings before going further.
 
 ## 6. Linear (ask first)
-Ask: "Push to Linear now?" If yes, run the `/sync-plan <slug>` workflow (`.claude/skills/sync-plan/SKILL.md`), which has its own dry-run and confirmation.
+Ask: "Push to Linear now?" If yes, run the `/sync-plan <slug>` workflow (`.claude/skills/sync-plan/SKILL.md`), which applies issue saves automatically (only cancels need a yes).
 
 ## 7. Finish
 - Commit: `Add <name> project` (follow repo commit conventions).

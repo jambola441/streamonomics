@@ -44,6 +44,7 @@ streamonomics/
 │   ├── overlays/      #   browser-source overlays (HTML/CSS)
 │   ├── bot/           #   chat bot commands, alerts, integrations
 │   ├── checklists/    #   pre-stream / post-stream run sheets
+│   ├── rig.md         #   broadcast setup: cloud stage VM + Mac A/V
 │   ├── branding.md    #   name, voice, colors, panels
 │   └── schedule.md    #   when we're live and what format
 ├── projects/          # one folder per thing we build on stream

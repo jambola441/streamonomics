@@ -17,6 +17,19 @@ Claude is the stream manager: I type slash commands, Claude runs the show (episo
 
 ## Milestones
 
+### Rig: broadcast setup <!-- linear-milestone: 3ec64763-7905-40c5-8ee4-494d5f0d3209 -->
+- [ ] Provision Hetzner stage VM (Ubuntu 24.04 + XFCE, US East) [STR-15]
+  - ~4 vCPU / 8–16 GB; SSH keys only; firewall closed except Tailscale
+- [ ] Tailscale on the VM and the Mac [STR-16]
+- [ ] Remote desktop into the VM (NoMachine, xrdp fallback) [STR-17]
+  - readable at stream resolution; test latency while typing
+- [ ] VM bootstrap: Claude Code, git, Python, Node, this repo [STR-18]
+  - scripted as `tools/vm-setup.sh` so the VM is rebuildable
+- [ ] OBS on the Mac: scenes, audio filters, WebSocket with password [STR-19]
+  - window-capture the remote desktop; export scene collection to `stream/obs/`
+- [ ] "stream" macOS user for Fusion/AutoCAD days [STR-20]
+- [ ] Private test stream end to end, then review the recording [STR-21]
+
 ### v0: Local only, no API keys <!-- linear-milestone: f7ea7a49-daf7-47f2-8198-bd652e56809e -->
 - [ ] `tools/sm` CLI: state and session commands [STR-1]
   - `state get/set`, `session start/stop`, `ship`, `clip`, `serve`

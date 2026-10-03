@@ -21,3 +21,8 @@ ADR-lite, newest at the bottom. `**Decision:** open` = still undecided.
 **Context:** The ledger shows AI spend per session.
 **Decision:** open. Manual `/ship --cost`, or pull from the Anthropic usage console?
 **Why:** _tbd_
+
+## 2026-10-03: Broadcast rig: cloud stage VM + Mac as A/V and encoder
+**Context:** The MacBook (Apple Silicon, 16GB+) shouldn't be the "stage" (personal desktop, notifications, accounts), but camera and mic are physically on it.
+**Decision:** A Hetzner cloud VM (Linux desktop, US East) runs Claude Code, the repo, `sm`, and the dev workspace. The Mac runs only OBS + cam + mic + the hardware encoder, and captures a remote-desktop window into the VM. Tailscale links them: OBS browser sources load overlays from the VM's `sm serve`, and `sm obs` drives OBS's WebSocket on the Mac. Autodesk days run Fusion natively on the Mac under a dedicated "stream" macOS user.
+**Why:** Only the VM window ever hits the stream; A/V stays native (no sync drift); Apple Silicon encodes nearly free; stream secrets live on the VM, not the laptop; ~$30–80/mo. Full-cloud OBS (VDO.Ninja for cam/mic) stays as an upgrade path if laptop upload becomes the bottleneck.
