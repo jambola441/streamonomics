@@ -7,7 +7,12 @@ Phases are ordered. Check items off as you go. Claude can update this file on re
 - [ ] Lock the name and handle (Twitch, YouTube, X, TikTok). Check availability for `streamonomics`
 - [ ] Write `stream/branding.md`: tagline, voice, 2–3 colors, font
 - [ ] Decide what's **off-limits on stream**: client names, API keys, private dashboards (see Safety below)
-- [ ] Pick the first 3 projects (one per pillar: Build / Make / Grow) and scaffold them in `projects/`
+- [x] Pick the first projects: **stream-manager** (#1), **turonomics**, **terpenomics** (see `projects/`)
+- [x] Set the slots: Tue evening, Thu evening, one weekend day (see `stream/schedule.md`)
+- [ ] Lock Saturday vs. Sunday and exact times
+
+## Project #1: Stream Manager
+Claude runs the stream through custom Claude Code skills. Overlays, the chat bot, and OBS/Twitch control from Phases 1–2 are **built as part of this project**. Spec and roadmap: `projects/stream-manager/README.md`.
 
 ## Phase 1: Broadcast setup (weeks 1–2)
 - [ ] Install OBS. Create scenes: `Starting Soon`, `Main (screen + cam)`, `Full Screen Code`, `Just Chatting`, `BRB`, `Ending`
