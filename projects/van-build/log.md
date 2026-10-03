@@ -1,3 +1,3 @@
-# van-build: work log
+# Van Build-Out: Log
 
-Add one entry per session.
+One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Issue IDs optional.

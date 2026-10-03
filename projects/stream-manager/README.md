@@ -1,15 +1,17 @@
 # Stream Manager
 
 - **Pillar:** Build
-- **Status:** active, project #1
 - **Started:** 2026-10-03
 - **Stack / tools:** Claude Code (custom skills), Python 3 CLI, HTML/CSS overlays, OBS WebSocket, Twitch Helix API
 - **Repo / link:** this repo (`.claude/skills/`, `tools/`, `stream/`)
 
-## Goal
+Project #1. Goal, milestones, and status: [plan.md](plan.md). Work log: [log.md](log.md). Decisions and open questions: [decisions.md](decisions.md).
+
+## What it is
 Claude is the stream manager. During a stream I type slash commands in Claude Code. Claude preps the episode, flips OBS scenes, updates overlays, sets the Twitch title, drops clip markers, logs what shipped, and writes the recap afterwards. I just work.
 
-**Done (v0) looks like:** a full stream run end to end with `/prep`, `/golive`, `/now`, `/ship`, `/clip`, and `/wrap`, with overlays updating live and no manual note-taking.
+## Stream angle
+The channel building its own control room, on stream. Every feature is immediately visible (the overlay it adds is on screen the same night), and it's the purest Claude-maxxing demo: the AI runs the show it's starring in.
 
 ## Architecture
 
@@ -42,38 +44,19 @@ Claude is the stream manager. During a stream I type slash commands in Claude Co
 
 | Skill | When | What it does |
 |---|---|---|
-| `/prep [slot]` | before stream | Reads `schedule.md`, the project README and log, and the backlog. Proposes the goal, title, and go-live post. Creates the episode log and sets state. |
+| `/prep [slot]` | before stream | Reads `schedule.md`, the project's `plan.md` (next open deliverables) and `log.md`, and the backlog. Proposes the goal, title, and go-live post. Creates the episode log and sets state. |
 | `/golive` | going live | Runs the pre-stream checklist, sets state `live`, starts the session timer, switches to the Starting Soon scene (v1), sets the Twitch title and category (v2). |
 | `/now "<task>"` | during | Updates the "now building" ticker. |
 | `/ship "<thing>"` | during | Adds to the ledger, logs to the episode, shows the overlay "shipped" pop, drops a Twitch marker (v2). |
 | `/clip "<moment>"` | during | Drops a marker and writes a timestamp into the episode log's clip table. |
 | `/scene <name>` / `/brb` | during | Scene control (v1). |
 | `/idea "<text>"` | anytime | Appends to `ideas/inbox.md`. |
-| `/wrap` | ending | Fills in the episode log, updates the project log and status, totals the ledger, drafts 2–3 clip captions and the post-stream post, switches to the Ending scene, commits. |
+| `/wrap` | ending | Fills in the episode log, appends today's `## YYYY-MM-DD` entry to the project's `log.md` (creates the heading if missing), checks off shipped deliverables in `plan.md`, optionally runs `/sync-plan <slug>`, totals the ledger, drafts 2–3 clip captions and the post-stream post, switches to the Ending scene, commits. |
+| `/sync-plan <slug\|all>` | after editing a plan | Pushes `plan.md` to Linear and writes issue IDs back. **Already built:** `.claude/skills/sync-plan/`. |
 | `/recap` | weekly | Builds the Ledger recap from the week's episodes and drafts it for YouTube or as a thread. |
 | `/chat` | during (v2) | Summarizes recent chat and surfaces questions and ideas worth answering. |
 
-## Roadmap
-- **v0: local only, no API keys** (target: first weekend stream)
-  - [ ] `tools/sm` CLI: `state get/set`, `session start/stop`, `ship`, `clip`, `serve`
-  - [ ] `stream/state.json` schema
-  - [ ] Overlays: `now-building.html`, `ledger.html` (timer, shipped count, latest ship)
-  - [ ] Skills: `/prep`, `/golive`, `/now`, `/ship`, `/clip`, `/idea`, `/wrap`
-  - [ ] Dry run: fake stream, end to end
-- **v1: OBS control**
-  - [ ] `sm obs`: scene switch, start/stop stream and recording, recording chapter markers (obs-websocket v5)
-  - [ ] `/scene`, `/brb`; `/golive` and `/wrap` drive scenes
-- **v2: Twitch**
-  - [ ] Twitch app + OAuth token in `.env` (set up off-stream)
-  - [ ] `sm twitch`: title, category, stream markers, send chat message
-  - [ ] Chat bot: `!idea` → inbox, `!project`, `!ledger`, `!schedule`
-  - [ ] `/chat` skill
-- **v3: content flywheel**
-  - [ ] `/recap` weekly Ledger
-  - [ ] Clip captions and post drafts → `content/`
-  - [ ] Metrics pull into `content/metrics.md`
-
-## Open questions
-- Build v0 live on stream (recommended: it's the perfect launch episode) or pre-build it off-stream?
-- Custom bot vs. Streamer.bot for chat. Custom fits the brand and becomes content.
-- AI spend tracking: manual `/ship --cost`, or pull from the Anthropic usage console?
+## On-stream safety
+- The `sm` CLI is the only thing that reads secrets (`.env`), and it never prints them. Skills never `cat` or echo config.
+- Twitch OAuth and OBS WebSocket passwords get set up **off-stream**.
+- `stream/state.json` holds nothing secret; it's what the overlays show anyway.

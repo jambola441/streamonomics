@@ -1,22 +1,16 @@
 # Turonomics
 
 - **Pillar:** Build (+ Grow later: selling it to other Turo hosts)
-- **Status:** active
-- **Slot:** Tuesday evening
 - **Stack / tools:** Chrome extension (Manifest V3, TypeScript), FastAPI (Python 3.12)
 - **Repo / link:** [jambola441/turonomics](https://github.com/jambola441/turonomics)
+
+Tuesday evening slot. Goal, milestones, and status: [plan.md](plan.md). Work log: [log.md](log.md). Decisions: [decisions.md](decisions.md).
 
 ## What it is
 Tooling for Turo hosts to reconcile NY EZPass toll charges against individual rental trips. The extension exports trips from the Turo host dashboard. The API matches toll transactions to trips and returns a per-trip breakdown, including multiple transponders and plates per owner.
 
 ## Stream angle
 A real small-business pain point: hosts lose money on unbilled tolls. Good "-onomics" story because you can put a dollar figure on recovered tolls.
-
-## Goal
-Define what "done" means here: e.g. a hosted version a non-technical host can use end to end?
-
-## Next steps
-- [ ] Write the next 3–5 milestones here so `/prep` can pick Tuesday goals
 
 ## On-stream safety
 - **Use only `examples/` / synthetic data on screen.** Real trip CSVs, plates, and toll accounts are personal and customer data.
