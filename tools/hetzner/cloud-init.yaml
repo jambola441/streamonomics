@@ -1,0 +1,35 @@
+#cloud-config
+# First-boot setup for the Streamonomics stage VM (Ubuntu 24.04).
+# Base only: user, SSH hardening, desktop, Tailscale. App tooling lives in tools/vm-setup.sh (STR-18).
+users:
+  - name: stream
+    groups: [sudo]
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys: []   # filled by create-stage.sh from the Hetzner SSH key
+package_update: true
+package_upgrade: true
+packages:
+  - xfce4
+  - xfce4-goodies
+  - dbus-x11
+  - git
+  - curl
+  - python3
+  - python3-venv
+  - ufw
+  - fail2ban
+write_files:
+  - path: /etc/ssh/sshd_config.d/10-stage.conf
+    content: |
+      PasswordAuthentication no
+      PermitRootLogin prohibit-password
+runcmd:
+  - cp /root/.ssh/authorized_keys /home/stream/.ssh/authorized_keys || true
+  - chown -R stream:stream /home/stream/.ssh
+  - systemctl restart ssh
+  - curl -fsSL https://tailscale.com/install.sh | sh
+  - ufw default deny incoming
+  - ufw allow in on tailscale0
+  - ufw allow 22/tcp
+  - ufw --force enable
