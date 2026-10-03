@@ -53,6 +53,7 @@ The channel building its own control room, on stream. Every feature is immediate
 | `/idea "<text>"` | anytime | Appends to `ideas/inbox.md`. |
 | `/wrap` | ending | Fills in the episode log, appends today's `## YYYY-MM-DD` entry to the project's `log.md` (creates the heading if missing), checks off shipped deliverables in `plan.md`, optionally runs `/sync-plan <slug>`, totals the ledger, drafts 2–3 clip captions and the post-stream post, switches to the Ending scene, commits. |
 | `/sync-plan <slug\|all>` | after editing a plan | Pushes `plan.md` to Linear and writes issue IDs back. **Already built:** `.claude/skills/sync-plan/`. |
+| `/new-project [idea]` | anytime | Interviews you, scaffolds the folder, fills README + plan.md, offers `/sync-plan`. **Already built:** `.claude/skills/new-project/`. |
 | `/recap` | weekly | Builds the Ledger recap from the week's episodes and drafts it for YouTube or as a thread. |
 | `/chat` | during (v2) | Summarizes recent chat and surfaces questions and ideas worth answering. |
 

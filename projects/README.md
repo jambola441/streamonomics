@@ -1,6 +1,6 @@
 # Projects
 
-One folder per thing built on stream. Create one with `tools/new-project.sh <slug> ["Display Name"] [slot]`.
+One folder per thing built on stream. Create one with `/new-project` (guided: interview → filled-in README + plan.md → optional Linear sync), or `tools/new-project.sh <slug> ["Display Name"] [slot]` for a bare scaffold.
 
 | Project | Pillar | Status | Slot | Link |
 |---|---|---|---|---|
