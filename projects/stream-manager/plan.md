@@ -18,7 +18,7 @@ Claude is the stream manager: I type slash commands, Claude runs the show (episo
 ## Milestones
 
 ### Rig: broadcast setup <!-- linear-milestone: 3ec64763-7905-40c5-8ee4-494d5f0d3209 -->
-- [ ] Provision Hetzner stage VM (Ubuntu 24.04 + XFCE, US East) [STR-15]
+- [ ] Provision Hetzner stage VM (Ubuntu 24.04 + XFCE, Nuremberg) [STR-15]
   - Nuremberg `cx43` (8 vCPU / 16 GB, ~$18/mo); SSH keys only; firewall closed except Tailscale
   - `tools/hetzner/create-stage.sh` + `cloud-init.yaml`; `lockdown.sh` closes public SSH after Tailscale
 - [ ] Tailscale on the VM and the Mac [STR-16]
