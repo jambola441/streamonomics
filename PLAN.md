@@ -4,7 +4,8 @@ Phases are ordered. Check items off as you go. Claude can update this file on re
 
 ## Phase 0: Foundation (this week)
 - [x] Control-station repo scaffolded
-- [ ] Lock the name and handle (Twitch, YouTube, X, TikTok). Check availability for `streamonomics`
+- [x] Twitch account: `generic_tech` (brand: generic.tech; show: Streamonomics)
+- [ ] Reserve `generic_tech` on YouTube, X, TikTok; turn on 2FA everywhere
 - [ ] Write `stream/branding.md`: tagline, voice, 2–3 colors, font
 - [ ] Decide what's **off-limits on stream**: client names, API keys, private dashboards (see Safety below)
 - [x] Pick the first projects: **stream-manager** (#1), **turonomics**, **terpenomics**, **van-build** (see `projects/`)
