@@ -1,0 +1,7 @@
+.env
+.env.*
+*.key
+secrets/
+.DS_Store
+*.mp4
+*.mkv
