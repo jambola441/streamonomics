@@ -9,10 +9,11 @@ Phases are ordered. Check items off as you go. Claude can update this file on re
 - [ ] Decide what's **off-limits on stream**: client names, API keys, private dashboards (see Safety below)
 - [x] Pick the first projects: **stream-manager** (#1), **turonomics**, **terpenomics**, **van-build** (see `projects/`)
 - [x] Set the slots: Tue evening, Thu evening, one weekend day (see `stream/schedule.md`)
-- [ ] Lock Saturday vs. Sunday and exact times
+- [ ] Lock exact times. The weekend slot floats: Saturday or Sunday, whichever works that week
+- [ ] Authorize Linear connector, create 'Streamonomics' team, run /sync-plan all
 
 ## Project #1: Stream Manager
-Claude runs the stream through custom Claude Code skills. Overlays, the chat bot, and OBS/Twitch control from Phases 1–2 are **built as part of this project**. Spec and roadmap: `projects/stream-manager/README.md`.
+Claude runs the stream through custom Claude Code skills. Overlays, the chat bot, and OBS/Twitch control from Phases 1–2 are **built as part of this project**. Spec: `projects/stream-manager/README.md`. Roadmap: `projects/stream-manager/plan.md`.
 
 ## Phase 1: Broadcast setup (weeks 1–2)
 - [ ] Install OBS. Create scenes: `Starting Soon`, `Main (screen + cam)`, `Full Screen Code`, `Just Chatting`, `BRB`, `Ending`
