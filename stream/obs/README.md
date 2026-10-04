@@ -17,3 +17,7 @@ python3 -m venv ~/.venvs/obs && ~/.venvs/obs/bin/pip install obsws-python
 ~/.venvs/obs/bin/python tools/obs/setup_scenes.py --apply    # builds Code, Chatting, Starting Soon, BRB, Ending
 ```
 Safe to re-run; existing scenes are left alone.
+
+## Let Claude drive OBS
+`tools/obs/obsctl.py` (same venv): `status`, `scenes`, `scene "<name>"` (auto-mutes the mic on Starting Soon / BRB / Ending), `record start|stop`, `shot [out.png]` (Claude can look at the live output), `mic on|off`.
+Hands-free test run: `stream/checklists/test-run.md`.
