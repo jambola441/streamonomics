@@ -4,10 +4,17 @@ Phases are ordered. Check items off as you go. Claude can update this file on re
 
 ## Phase 0: Foundation (this week)
 - [x] Control-station repo scaffolded
-- [ ] Lock the name and handle (Twitch, YouTube, X, TikTok). Check availability for `streamonomics`
+- [x] Twitch account: `generic_tech` (brand: generic.tech; show: Streamonomics)
+- [ ] Reserve `generic_tech` on YouTube, X, TikTok; turn on 2FA everywhere
 - [ ] Write `stream/branding.md`: tagline, voice, 2–3 colors, font
 - [ ] Decide what's **off-limits on stream**: client names, API keys, private dashboards (see Safety below)
-- [ ] Pick the first 3 projects (one per pillar: Build / Make / Grow) and scaffold them in `projects/`
+- [x] Pick the first projects: **stream-manager** (#1), **turonomics**, **terpenomics**, **van-build** (see `projects/`)
+- [x] Set the slots: Tue evening, Thu evening, one weekend day (see `stream/schedule.md`)
+- [ ] Lock exact times. The weekend slot floats: Saturday or Sunday, whichever works that week
+- [ ] Authorize Linear connector, create 'Streamonomics' team, run /sync-plan all
+
+## Project #1: Stream Manager
+Claude runs the stream through custom Claude Code skills. Overlays, the chat bot, and OBS/Twitch control from Phases 1–2 are **built as part of this project**. Spec: `projects/stream-manager/README.md`. Roadmap: `projects/stream-manager/plan.md`.
 
 ## Phase 1: Broadcast setup (weeks 1–2)
 - [ ] Install OBS. Create scenes: `Starting Soon`, `Main (screen + cam)`, `Full Screen Code`, `Just Chatting`, `BRB`, `Ending`

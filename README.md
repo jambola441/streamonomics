@@ -44,20 +44,25 @@ streamonomics/
 │   ├── overlays/      #   browser-source overlays (HTML/CSS)
 │   ├── bot/           #   chat bot commands, alerts, integrations
 │   ├── checklists/    #   pre-stream / post-stream run sheets
+│   ├── rig.md         #   broadcast setup: cloud stage VM + Mac A/V
 │   ├── branding.md    #   name, voice, colors, panels
 │   └── schedule.md    #   when we're live and what format
 ├── projects/          # one folder per thing we build on stream
-│   └── _template/
+│   ├── _template/
+│   └── <slug>/        #   README, plan.md (→ Linear), log.md, decisions.md, notes/, assets/
 ├── ideas/             # ideation: inbox → backlog → promoted to a project
 ├── episodes/          # one log per stream (what happened, clip timestamps)
 │   └── _template/
 ├── content/           # repurposing: clips, shorts, posts, metrics
-└── tools/             # scripts that run the station
+├── tools/             # scripts that run the station (+ plan_parse.py for the Linear sync)
+└── .claude/skills/    # Claude Code skills, e.g. /sync-plan (plan.md → Linear)
 ```
 
 ### Quick commands
 ```bash
-tools/new-project.sh my-cool-app                      # scaffold projects/my-cool-app
+tools/new-project.sh my-cool-app "My Cool App" tue    # scaffold projects/my-cool-app
 tools/new-episode.sh "Ship It: invoice app"           # create today's episode log
 tools/new-idea.sh "AI quote generator for the shop"   # drop an idea in the inbox
 ```
+
+In Claude Code: `/sync-plan <slug>` or `/sync-plan all` pushes project plans to Linear.
