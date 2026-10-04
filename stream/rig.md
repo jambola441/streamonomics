@@ -24,6 +24,8 @@ Decision and reasoning: `projects/stream-manager/decisions.md` (2026-10-03: Broa
 | Autodesk | Mac, "stream" user | Fusion/AutoCAD don't run on Linux. Dedicated macOS user keeps personal stuff out of frame. |
 
 ## Remote desktop (STR-17): NoMachine
+The free Personal edition won't create a virtual desktop on a headless VM, so the stage uses a **paid NoMachine subscription** (~$24.50). After buying, install the package your purchase email names (it replaces the Personal edition) and activate it per that email.
+
 On the VM (`ssh stream@stage`):
 1. `sudo passwd stream`: NoMachine logs in with a password. SSH passwords stay disabled, and port 4000 is only reachable over Tailscale.
 2. Download the **Linux DEB amd64** link from https://www.nomachine.com/download, then `sudo apt install ./nomachine_*_amd64.deb`.
