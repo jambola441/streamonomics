@@ -35,6 +35,7 @@ def load_env():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.split("=", 1)
+                v = v.split(" #", 1)[0]   # allow trailing comments
                 os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
     missing = [k for k in ("OBS_HOST", "OBS_PASSWORD") if not os.environ.get(k)]
     if missing:
