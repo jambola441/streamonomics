@@ -23,6 +23,15 @@ Decision and reasoning: `projects/stream-manager/decisions.md` (2026-10-03: Broa
 | Secrets | VM `.env` | Twitch app creds + OBS WebSocket password. Never opened on stream. Stream key stays in OBS on the Mac. |
 | Autodesk | Mac, "stream" user | Fusion/AutoCAD don't run on Linux. Dedicated macOS user keeps personal stuff out of frame. |
 
+## Remote desktop (STR-17): NoMachine
+On the VM (`ssh stream@stage`):
+1. `sudo passwd stream`: NoMachine logs in with a password. SSH passwords stay disabled, and port 4000 is only reachable over Tailscale.
+2. Download the **Linux DEB amd64** link from https://www.nomachine.com/download, then `sudo apt install ./nomachine_*_amd64.deb`.
+3. `sudo systemctl set-default multi-user.target && sudo reboot`: no local display, so NoMachine creates a virtual XFCE desktop.
+
+On the Mac: install NoMachine, add a connection to host `stage`, port `4000`, protocol NX, user `stream`.
+Check: text is readable at 1080p, and typing latency is tolerable. If NoMachine misbehaves, fall back to `xrdp` + Microsoft's "Windows App".
+
 ## Cost notes
 - Hetzner bills stopped servers. Only delete stops billing (snapshot → delete → recreate is possible but not worth it at ~$18/mo).
 

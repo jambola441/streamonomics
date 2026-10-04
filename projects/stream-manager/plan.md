@@ -24,7 +24,7 @@ Claude is the stream manager: I type slash commands, Claude runs the show (episo
 - [x] Tailscale on the VM and the Mac [STR-16]
 - [ ] Remote desktop into the VM (NoMachine, xrdp fallback) [STR-17]
   - readable at stream resolution; test latency while typing
-- [ ] VM bootstrap: Claude Code, git, Python, Node, this repo [STR-18]
+- [x] VM bootstrap: Claude Code, git, Python, Node, this repo [STR-18]
   - scripted as `tools/vm-setup.sh` so the VM is rebuildable
 - [ ] OBS on the Mac: scenes, audio filters, WebSocket with password [STR-19]
   - window-capture the remote desktop; export scene collection to `stream/obs/`
