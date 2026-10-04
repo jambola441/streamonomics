@@ -26,7 +26,7 @@ Claude is the stream manager: I type slash commands, Claude runs the show (episo
   - readable at stream resolution; test latency while typing
 - [x] VM bootstrap: Claude Code, git, Python, Node, this repo [STR-18]
   - scripted as `tools/vm-setup.sh` so the VM is rebuildable
-- [ ] OBS on the Mac: scenes, audio filters, WebSocket with password [STR-19]
+- [x] OBS on the Mac: scenes, audio filters, WebSocket with password [STR-19]
   - window-capture the remote desktop; export scene collection to `stream/obs/`
 - [ ] "stream" macOS user for Fusion/AutoCAD days [STR-20]
 - [ ] Private test stream end to end, then review the recording [STR-21]
