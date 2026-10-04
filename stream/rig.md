@@ -29,7 +29,13 @@ The free Personal edition won't create a virtual desktop on a headless VM, so th
 On the VM (`ssh stream@stage`):
 1. `sudo passwd stream`: NoMachine logs in with a password. SSH passwords stay disabled, and port 4000 is only reachable over Tailscale.
 2. Download the **Linux DEB amd64** link from https://www.nomachine.com/download, then `sudo apt install ./nomachine_*_amd64.deb`.
-3. `sudo systemctl set-default multi-user.target && sudo reboot`: no local display, so NoMachine creates a virtual XFCE desktop.
+3. `sudo systemctl set-default multi-user.target && sudo reboot`
+4. Make new NoMachine desktops start XFCE (otherwise you get a black screen with only the NoMachine window):
+   ```bash
+   sudo sed -i 's|^#*DefaultDesktopCommand.*|DefaultDesktopCommand "/usr/bin/startxfce4"|' /usr/NX/etc/node.cfg
+   sudo /usr/NX/bin/nxserver --restart
+   ```
+5. Activate the subscription: `sudo /usr/NX/bin/nxserver --subscriptionset <file>.lic`: no local display, so NoMachine creates a virtual XFCE desktop.
 
 On the Mac: install NoMachine, add a connection to host `stage`, port `4000`, protocol NX, user `stream`.
 Check: text is readable at 1080p, and typing latency is tolerable. If NoMachine misbehaves, fall back to `xrdp` + Microsoft's "Windows App".

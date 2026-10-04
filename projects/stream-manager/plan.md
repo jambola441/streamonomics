@@ -22,7 +22,7 @@ Claude is the stream manager: I type slash commands, Claude runs the show (episo
   - Falkenstein `cx43` (8 vCPU / 16 GB, ~$18/mo); SSH keys only; firewall closed except Tailscale
   - `tools/hetzner/create-stage.sh` + `cloud-init.yaml`; `lockdown.sh` closes public SSH after Tailscale
 - [x] Tailscale on the VM and the Mac [STR-16]
-- [ ] Remote desktop into the VM (NoMachine, xrdp fallback) [STR-17]
+- [x] Remote desktop into the VM (NoMachine, xrdp fallback) [STR-17]
   - readable at stream resolution; test latency while typing
 - [x] VM bootstrap: Claude Code, git, Python, Node, this repo [STR-18]
   - scripted as `tools/vm-setup.sh` so the VM is rebuildable
