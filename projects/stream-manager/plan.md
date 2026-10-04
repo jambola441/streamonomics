@@ -62,6 +62,24 @@ Claude is the stream manager: I type slash commands, Claude runs the show (episo
 - [ ] Clip captions and post drafts → `content/` [STR-13]
 - [ ] Metrics pull into `content/metrics.md` [STR-14]
 
+### v4: Producer (watch → triage → act) <!-- linear-milestone: 67cb85a1-2b95-4d37-95be-5c2205a41134 -->
+- [ ] Producer design + decision record [STR-22]
+  - layered: cheap detectors → event bus → rules / small model / escalate to VM Claude; see `notes/producer.md`
+- [ ] Event bus + action allowlist [STR-23]
+  - typed events queue; producer can only trigger named actions (`scene`, `mic`, `overlay`, `marker`, `idea`, `task`)
+- [ ] Chat listener → events [STR-24]
+  - Twitch EventSub/IRC; only the owner's account can issue `task` actions; chat treated as untrusted (prompt-injection safe)
+- [ ] Voice commands → events [STR-25]
+  - voice activity detection + wake word + local speech-to-text; ships text events only
+- [ ] Run sheets: scripted cues [STR-26]
+  - YAML time/condition cues (e.g. start → Starting Soon, shipped → overlay pop)
+- [ ] Video + health watcher [STR-27]
+  - periodic OBS screenshots: black/frozen frame, secret-looking text on screen; mic muted while talking; dropped frames
+- [ ] Triage tiers + budget caps [STR-28]
+  - rules first, batched small model for ambiguous items, escalate real work to the VM Claude session; per-stream spend cap; costs logged to the ledger
+- [ ] Kill switch + shadow mode [STR-29]
+  - "producer, stand down" / `!producer off`; log-only mode for a few streams before it acts
+
 ## Parking lot
 <!-- not synced to Linear -->
 - Live push (SSE) for overlays instead of polling
