@@ -12,3 +12,4 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 - STR-15, STR-16 done.
 - `tools/vm-setup.sh` run on the VM; Claude Code installed and logged in (STR-18 done).
 - Merged everything to `main` ([jambola441/streamonomics#1](https://github.com/jambola441/streamonomics/pull/1)).
+- NoMachine (paid subscription) working: XFCE desktop on `stage` from the Mac. Fix needed: `DefaultDesktopCommand "/usr/bin/startxfce4"` in `/usr/NX/etc/node.cfg` (STR-17 done).
