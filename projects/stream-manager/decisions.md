@@ -36,3 +36,8 @@ ADR-lite, newest at the bottom. `**Decision:** open` = still undecided.
 **Context:** Creating `cx43` in Nuremberg failed with `resource_unavailable` (no capacity).
 **Decision:** Created it in Falkenstein (`fsn1`), the other German site: same price and latency.
 **Why:** Nothing changes in practice; `create-stage.sh` now defaults to `fsn1`.
+
+## 2026-10-04: Pay for NoMachine
+**Context:** NoMachine's free edition needs a subscription to create a virtual desktop on a headless VM. xrdp was the free alternative.
+**Decision:** Buy the NoMachine subscription (~$24.50).
+**Why:** Already installed, better image quality than xrdp, cheap. It also covers the business-use question that came with the free license.
