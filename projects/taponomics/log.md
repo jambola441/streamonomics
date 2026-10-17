@@ -9,3 +9,4 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 - Content: FLEURS (CC-BY-4.0, ungated). Common Voice has left Hugging Face, so it's out for the prototype.
 - Set up three chats like Five Boroughs: this one plans and relays, an implementation chat builds, a stream controller runs OBS. Brief on jambola441/scratch, folder taponomics/.
 - Repo created: jambola441/taponomics. Implementation chat ("Hello") briefed and waiting for GO.
+- Stream controller ("Chief of stream controller", Remote Control session on the stage VM) briefed: 3-screen layout, game audio capture, run of show. Prepping scenes.
