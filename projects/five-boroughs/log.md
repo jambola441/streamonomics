@@ -5,3 +5,4 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 ## 2026-10-17
 - Project created.
 - Named it Five Boroughs (no "GTA" in the name). Goal: max-scale stress test of the new model. M1 = streets + walking + car + cops.
+- Building approach decided: data shells + features pulled from photos by Haiku → generated 3D models. Added M2 survey pipeline.
