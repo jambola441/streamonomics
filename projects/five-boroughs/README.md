@@ -16,4 +16,5 @@ Model-maxxing stress test. The -onomics: $200/mo plan vs. what a studio spends; 
 ## On-stream safety
 - Google Maps / 3D Tiles API key lives in `.env` only: never on screen, never committed. Restrict the key by HTTP referrer and set a billing cap.
 - Third-party assets (character likenesses, tile caches, ripped models) stay out of the repo (`.gitignore`d); repo holds code only.
+- 9/11 Memorial stays a respectful, non-destructible space: no violence or mission content there.
 - No real addresses of private people (own home, friends) used as mission locations.

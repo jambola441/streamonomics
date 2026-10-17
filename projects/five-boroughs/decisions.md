@@ -23,3 +23,8 @@ ADR-lite, newest at the bottom. Undecided? Write `**Decision:** open` and come b
 **Context:** Buildings, streets, parks, and plazas all need to match real NYC.
 **Decision:** Open data gives placement and shape. Photos give features. A builder library holds standard recipes. Haiku/Sonnet write sandboxed per-object scripts that only call the library. A render-and-compare loop checks output against photos. Results get baked to glTF.
 **Why:** One pipeline to build and debug, safe to run generated code, instanced and fast to render. Gave up full freedom in the generated code.
+
+## 2026-10-17: Start with the whole Manhattan grid, empty blocks, then One WTC
+**Context:** Could start with one detailed neighborhood or the whole island rough.
+**Decision:** M1 is every Manhattan street with empty blocks. M2 is One WTC as the first landmark. Individual buildings come after.
+**Why:** The whole island playable from day one is a better hook, and it forces chunked streaming early. One landmark shakes out the builder library before we scale it to 43k buildings.
