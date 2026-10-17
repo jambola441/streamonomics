@@ -3,7 +3,7 @@
 - **Pillar:** Build
 - **Started:** 2026-10-17
 - **Stack / tools:** Three.js + Vite (browser), OpenStreetMap / NYC Open Data geometry, Google Photorealistic 3D Tiles (streamed live, never committed), Claude Code on the Max $200 plan
-- **Repo / link:** public repo, TBD (link here once created)
+- **Repo / link:** [jambola441/five-boroughs](https://github.com/jambola441/five-boroughs) (public)
 
 Status, slot, goal, and milestones live in [plan.md](plan.md). Work log: [log.md](log.md). Decisions: [decisions.md](decisions.md).
 
