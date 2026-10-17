@@ -1,7 +1,7 @@
 ---
 name: Five Boroughs
 slug: five-boroughs
-status: active          # idea | active | paused | shipped | archived
+status: paused          # idea | active | paused | shipped | archived
 slot: weekend          # tue | thu | weekend | any
 linear:
   team: Streamonomics
