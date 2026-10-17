@@ -9,7 +9,7 @@ One folder per thing built on stream. Create one with `/new-project` (guided: in
 | [terpenomics](terpenomics/) | Build / Grow | active | Thursday | [jambola441/terpenomics](https://github.com/jambola441/terpenomics) |
 | [van-build](van-build/) | Make | active | Weekend (Shop Floor) | n/a |
 | [five-boroughs](five-boroughs/) | Build | paused (next week) | Weekend | [jambola441/five-boroughs](https://github.com/jambola441/five-boroughs) |
-| [taponomics](taponomics/) | Build | active | Weekend | public repo TBD |
+| [taponomics](taponomics/) | Build | active | Weekend | [jambola441/taponomics](https://github.com/jambola441/taponomics) |
 
 ## What's in a project folder
 

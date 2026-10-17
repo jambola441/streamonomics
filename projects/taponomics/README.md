@@ -3,7 +3,7 @@
 - **Pillar:** Build (Grow once ads go live)
 - **Started:** 2026-10-17
 - **Stack / tools:** Vite + React + TypeScript SPA, small Node API, Render (web service + Postgres), Google FLEURS speech clips (CC-BY-4.0), Natural Earth country map, Claude Code on the Max $200 plan
-- **Repo / link:** public repo TBD (link here once created)
+- **Repo / link:** [jambola441/taponomics](https://github.com/jambola441/taponomics)
 
 Status, slot, goal, and milestones live in [plan.md](plan.md). Work log: [log.md](log.md). Decisions: [decisions.md](decisions.md). Source spec: [notes/yaptap-prd.md](notes/yaptap-prd.md). Ideation recap: [notes/ideation.md](notes/ideation.md).
 
