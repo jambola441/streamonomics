@@ -18,3 +18,8 @@ ADR-lite, newest at the bottom. Undecided? Write `**Decision:** open` and come b
 **Context:** Want buildings that match real life without paying for Google 3D Tiles, which also look melted at street level and can't be cached or edited under Google's terms.
 **Decision:** Building shapes come from the NYC 3D Building Model + PLUTO. Facade features get pulled from street photos (Mapillary) by Haiku vision as structured recipes, voted across angles, then a procedural generator builds the 3D model.
 **Why:** Free and open data, game-ready meshes, and the pipeline itself is good stream content. Gave up photoreal textures; accuracy depends on photo coverage and how well photos get matched to buildings.
+
+## 2026-10-17: One pipeline for everything: recipes + per-object scripts on a builder library
+**Context:** Buildings, streets, parks, and plazas all need to match real NYC.
+**Decision:** Open data gives placement and shape. Photos give features. A builder library holds standard recipes. Haiku/Sonnet write sandboxed per-object scripts that only call the library. A render-and-compare loop checks output against photos. Results get baked to glTF.
+**Why:** One pipeline to build and debug, safe to run generated code, instanced and fast to render. Gave up full freedom in the generated code.
