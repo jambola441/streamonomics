@@ -12,3 +12,4 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 
 ## 2026-10-30
 - Unpaused. Starting with the WTC area: a peer session in Chrome researches buildings via Google Maps (text notes only), and the five-boroughs session builds in Three.js.
+- Citywide tiles built by peer session. Next: tier-1 detail for every building = PLUTO style archetype + facade shader. Photo survey stays M3.

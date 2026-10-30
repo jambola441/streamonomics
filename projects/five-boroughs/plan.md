@@ -34,6 +34,14 @@ Max-scale stress test: see how far the new model can push a browser open-world N
 - [ ] 9/11 Memorial pools and plaza as a respectful, non-destructible space
 - [ ] Bake to glTF and place at real position in the grid
 
+### M2.5: Every building styled from data <!-- linear-milestone: -->
+- [ ] Citywide building tiles (1.08M extruded footprints, glb, Columbus Circle origin)
+- [ ] PLUTO attributes + style archetype per building, rules table tunable on stream
+- [ ] Facade shader: floor bands, window grid, storefronts, per-style palette, seed variation
+- [ ] Instanced near-LOD extras: cornices, fire escapes, water towers
+- [ ] LOD2 roofs from the DOITT CityGML model, Manhattan first
+- [ ] Archetype reference sheets (12 styles) from street-level research
+
 ### M3: Building survey pipeline <!-- linear-milestone: -->
 - [ ] Pull Mapillary street photos for one pilot neighborhood (~500 buildings)
 - [ ] Match each photo to the building face it sees (camera pose vs footprints)
