@@ -9,3 +9,6 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 - Same recipes + per-object scripts approach extended to streets, parks, plazas (M3). Builder library + render-and-compare loop added to M2.
 - Re-sequenced: M1 whole Manhattan grid (empty blocks), M2 One WTC, M3 buildings, M4 streetscape.
 - Parked until next week: too big for the first stream. Plan, brief, and the 3-screen stream layout idea are ready to pick back up.
+
+## 2026-10-30
+- Unpaused. Starting with the WTC area: a peer session in Chrome researches buildings via Google Maps (text notes only), and the five-boroughs session builds in Three.js.
