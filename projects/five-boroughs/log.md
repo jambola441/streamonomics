@@ -16,3 +16,4 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 
 ## 2026-10-31
 - Citywide tiles live on Supabase; flyer with address search at generic.tech/five-boroughs. Plan restructured around the detail ladder L0–L5 with per-building accuracy + cost.
+- L2 v1 live in the flyer: per-style facade shader (window grid, floor bands, storefronts, curtain walls from the style sheets) + color-by-accuracy view (reads v2 when uploaded). Builder session inactive, so L2 was built directly in the flyer.

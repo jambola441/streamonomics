@@ -25,9 +25,10 @@ Rebuild every NYC building as close to the real one as the data allows, in the b
 
 ### L2: Right look from data <!-- linear-milestone: -->
 - [ ] Accuracy score per building (level, confidence, sources) in the feature table
-- [ ] Flyer: "color by accuracy" mode
-- [ ] Facade generators for the top Manhattan styles (tenement, pre-war elevator, brownstone) from the style sheets
-- [ ] Remaining 11 styles + fallbacks, citywide
+- [x] Flyer: "color by accuracy" mode
+- [x] Facade generators for the top Manhattan styles (tenement, pre-war elevator, brownstone) from the style sheets
+  - v1 is a shader in the flyer; real 3D geometry comes in L3
+- [x] Remaining 11 styles + fallbacks, citywide
 - [ ] Tune styles.json rules on stream from spot checks
 
 ### L3: Real 3D facades from photos <!-- linear-milestone: -->
