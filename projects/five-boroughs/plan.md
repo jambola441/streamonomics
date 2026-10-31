@@ -56,3 +56,5 @@ Rebuild every NYC building as close to the real one as the data allows, in the b
 - All five boroughs, subway, bridges
 - AI-generated assets / NPC dialogue
 - Per-stream "how much game does $200 buy" scoreboard
+- Streetscape (streets, parks, plazas) on the same pipeline
+- Game layer: walk, drive, cops, missions
