@@ -33,3 +33,8 @@ ADR-lite, newest at the bottom. Undecided? Write `**Decision:** open` and come b
 **Context:** The first run put every building at the right place, height and shape. Now the goal is to get each building as close to real as possible.
 **Decision:** Climb levels L0–L5 (box → real shape → right look → real 3D facade → that exact building → landmarks). Pilot each level small, then scale. Score accuracy and cost per building.
 **Why:** Every step stays visible, and we only spend on detail where the pilot shows it pays. Gave up a single big-bang build.
+
+## 2026-10-31: Street View as a fallback source, open sources primary
+**Context:** Mapillary reaches only ~5% of Brooklyn buildings with 5+ photos, and fewer recent ones. Street View covers almost every building but Google's terms forbid building derived data from it.
+**Decision:** Open sources stay primary: Mapillary, KartaView, NYC tax photos, calibrated archetype recipes. Street View fills gaps only, read by the Chrome research session. Only the text recipe is kept; no images are saved, cached, published or shown on stream. Requests stay slow and bounded. Each recipe records its source, so Street-View-derived ones can be pulled if needed.
+**Why:** The owner accepted the terms risk for better per-building accuracy, while keeping exposure small and reversible. What we gave up: a fully clean data lineage.
