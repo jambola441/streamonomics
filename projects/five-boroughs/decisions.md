@@ -28,3 +28,8 @@ ADR-lite, newest at the bottom. Undecided? Write `**Decision:** open` and come b
 **Context:** Could start with one detailed neighborhood or the whole island rough.
 **Decision:** M1 is every Manhattan street with empty blocks. M2 is One WTC as the first landmark. Individual buildings come after.
 **Why:** The whole island playable from day one is a better hook, and it forces chunked streaming early. One landmark shakes out the builder library before we scale it to 43k buildings.
+
+## 2026-10-31: Detail ladder with per-building accuracy
+**Context:** The first run put every building at the right place, height and shape. Now the goal is to get each building as close to real as possible.
+**Decision:** Climb levels L0–L5 (box → real shape → right look → real 3D facade → that exact building → landmarks). Pilot each level small, then scale. Score accuracy and cost per building.
+**Why:** Every step stays visible, and we only spend on detail where the pilot shows it pays. Gave up a single big-bang build.

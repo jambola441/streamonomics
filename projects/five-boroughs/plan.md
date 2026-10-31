@@ -11,58 +11,39 @@ linear:
 # Five Boroughs: Plan
 
 ## Goal
-Max-scale stress test: see how far the new model can push a browser open-world NYC crime game across streams. Each stream ships a playable build; track features shipped, hours, and plan-limit hits per stream.
+Rebuild every NYC building as close to the real one as the data allows, in the browser, and climb the detail ladder level by level. Each level ships something visible in the flyer (generic.tech/five-boroughs) and reports per-building accuracy plus cost per building. Pilot, then scale: block, neighborhood, Manhattan, city. Open data first; Google is reference only.
 
 ## Milestones
 
-### M1: The grid <!-- linear-milestone: -->
-- [ ] Create public repo with Vite + Three.js scaffold and asset gitignore
-  - `.env` for API keys, assets/ and tile caches ignored
-- [ ] All of Manhattan's streets from LION/OSM: lanes, widths, real layout
-- [ ] Every block as an empty raised lot from planimetric curbs + sidewalks
-- [ ] Ground height from LiDAR terrain, water around the island
-- [ ] Chunked streaming so the whole island runs in a browser
-- [ ] Third-person walk controller with camera
-- [ ] One drivable car with enter/exit
-- [ ] Wanted level + one cop car that chases the player
-- [ ] Deploy a playable link and post it to chat
+### L0–L1: Shape baseline (done) <!-- linear-milestone: -->
+- [x] Citywide footprint tiles (1.08M buildings, 3,231 tiles, Columbus Circle origin)
+- [x] LOD2 roofs/walls from DOITT 2014 CityGML (94.6% of buildings)
+- [x] LiDAR 2017 refine for 2014–17 buildings + bad-height fixes
+- [x] Researched massing for post-2014 towers (92)
+- [x] Hosted on Supabase Storage (v1, all boroughs)
+- [x] Password-locked flyer with address search at generic.tech/five-boroughs
 
-### M2: First landmark, One World Trade Center <!-- linear-milestone: -->
-- [ ] Builder library v0: core API (extrude, setback, taper, curtain wall, instanced parts, LODs)
-- [ ] Sonnet-written bespoke generator for One WTC on the library
-- [ ] Render-and-compare loop against reference photos, max 3 rounds
-- [ ] 9/11 Memorial pools and plaza as a respectful, non-destructible space
-- [ ] Bake to glTF and place at real position in the grid
+### L2: Right look from data <!-- linear-milestone: -->
+- [ ] Accuracy score per building (level, confidence, sources) in the feature table
+- [ ] Flyer: "color by accuracy" mode
+- [ ] Facade generators for the top Manhattan styles (tenement, pre-war elevator, brownstone) from the style sheets
+- [ ] Remaining 11 styles + fallbacks, citywide
+- [ ] Tune styles.json rules on stream from spot checks
 
-### M2.5: Every building styled from data <!-- linear-milestone: -->
-- [ ] Citywide building tiles (1.08M extruded footprints, glb, Columbus Circle origin)
-- [ ] PLUTO attributes + style archetype per building, rules table tunable on stream
-- [ ] Facade shader: floor bands, window grid, storefronts, per-style palette, seed variation
-- [ ] Instanced near-LOD extras: cornices, fire escapes, water towers
-- [ ] LOD2 roofs from the DOITT CityGML model, Manhattan first
-- [ ] Archetype reference sheets (12 styles) from street-level research
+### L3: Real 3D facades from photos <!-- linear-milestone: -->
+- [ ] Mapillary photo pull + photo-to-building-face matching for a one-block pilot
+- [ ] Haiku facade recipe per building (JSON), voted across photos
+- [ ] Builder library: recessed windows, cornices, stoops, storefronts, fire escapes as instanced geometry, baked glb LOD0–2
+- [ ] Pilot report: cost/building, coverage, accuracy, then neighborhood run
 
-### M3: Building survey pipeline <!-- linear-milestone: -->
-- [ ] Pull Mapillary street photos for one pilot neighborhood (~500 buildings)
-- [ ] Match each photo to the building face it sees (camera pose vs footprints)
-- [ ] Haiku extracts a facade recipe per photo as structured JSON
-  - material, color, floors, window grid, cornice, fire escapes, storefront, roof, confidence
-- [ ] Vote across photos into one recipe per building, PLUTO fallback when unsure
-- [ ] Add 5 building recipes to the builder library (brownstone, pre-war tenement, glass tower, cast-iron, art deco setback)
-  - instanced parts, LODs, outputs a JSON op list
-- [ ] Sandboxed per-building scripts: Haiku/Sonnet write code that only calls the builder library
-- [ ] Render-and-compare loop: render from photo's camera pose, model critiques, fix, max 3 rounds, score saved
-- [ ] Bake each building to glTF with LODs
-- [ ] Cost and coverage report for the pilot (spend, % buildings covered, accuracy spot-check)
+### L4: That exact building <!-- linear-milestone: -->
+- [ ] Render-and-compare loop against photos, max 3 rounds, score saved
+- [ ] Sonnet escalation for low-confidence buildings
+- [ ] Manhattan run with live cost-per-building ledger
 
-### M4: Streetscape survey <!-- linear-milestone: -->
-- [ ] Load open street data for the pilot area
-  - planimetrics (curbs, sidewalks, medians), LION lanes/widths, Street Tree Census, hydrants, bike lanes, subway entrances, Citi Bike docks, Parks + POPS boundaries
-- [ ] Import Mapillary map-feature detections (signs, poles, lights, benches) as placements
-- [ ] Street recipes in builder library: lane markings, crosswalks, curb cuts, bus stops, bike lanes
-- [ ] Plaza and park recipes: paving, planters, benches, fountains, lawns, paths, playgrounds
-- [ ] Per-space scripts + render-and-compare loop, same pipeline as buildings
-- [ ] Bake street tiles and spaces to glTF; pilot report
+### L5: Landmarks <!-- linear-milestone: -->
+- [ ] Empire State Building hand-built generator (replace placeholder)
+- [ ] Top ~150 landmarks from survey docs, reviewed on stream
 
 ## Parking lot
 <!-- not synced to Linear -->
