@@ -24,7 +24,7 @@ Rebuild every NYC building as close to the real one as the data allows, in the b
 - [x] Password-locked flyer with address search at generic.tech/five-boroughs
 
 ### L2: Right look from data <!-- linear-milestone: -->
-- [ ] Accuracy score per building (level, confidence, sources) in the feature table
+- [x] Accuracy score per building (level, confidence, sources) in the feature table
 - [x] Flyer: "color by accuracy" mode
 - [x] Facade generators for the top Manhattan styles (tenement, pre-war elevator, brownstone) from the style sheets
   - v1 is a shader in the flyer; real 3D geometry comes in L3
@@ -32,10 +32,12 @@ Rebuild every NYC building as close to the real one as the data allows, in the b
 - [ ] Tune styles.json rules on stream from spot checks
 
 ### L3: Real 3D facades from photos <!-- linear-milestone: -->
-- [ ] Mapillary photo pull + photo-to-building-face matching for a one-block pilot
-- [ ] Haiku facade recipe per building (JSON), voted across photos
-- [ ] Builder library: recessed windows, cornices, stoops, storefronts, fire escapes as instanced geometry, baked glb LOD0–2
+- [x] Mapillary photo pull + photo-to-building-face matching for a one-block pilot
+- [x] Haiku facade recipe per building (JSON), voted across photos
+- [x] Builder library: recessed windows, cornices, stoops, storefronts, fire escapes as instanced geometry, baked glb LOD0–2
+  - v1 runs live in the flyer (instanced, near the camera); baking to glb comes later
 - [ ] Pilot report: cost/building, coverage, accuracy, then neighborhood run
+  - Dean St 100-199: 72/72 faces, mean confidence 0.60, Sonnet ~80k tokens per face; Mapillary reaches ~5% of Brooklyn buildings at 5+ images
 
 ### L4: That exact building <!-- linear-milestone: -->
 - [ ] Render-and-compare loop against photos, max 3 rounds, score saved

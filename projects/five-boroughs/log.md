@@ -17,3 +17,4 @@ One `## YYYY-MM-DD` heading per day, freeform bullets, newest at the bottom. Iss
 ## 2026-10-31
 - Citywide tiles live on Supabase; flyer with address search at generic.tech/five-boroughs. Plan restructured around the detail ladder L0–L5 with per-building accuracy + cost.
 - L2 v1 live in the flyer: per-style facade shader (window grid, floor bands, storefronts, curtain walls from the style sheets) + color-by-accuracy view (reads v2 when uploaded). Builder session inactive, so L2 was built directly in the flyer.
+- L3 pilot live: Dean St 100-199 (Boerum Hill) has 72 facade recipes (59 Mapillary via Sonnet/Haiku, 13 Street View text). The flyer renders real 3D windows, doors, stoops, cornices and wall colours per house. Mapillary coverage is thin (Brooklyn 5.5% at 5+ images), so the plan is archetype recipes calibrated on photo samples plus per-building overrides.
