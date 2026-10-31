@@ -38,3 +38,8 @@ ADR-lite, newest at the bottom. Undecided? Write `**Decision:** open` and come b
 **Context:** Mapillary reaches only ~5% of Brooklyn buildings with 5+ photos, and fewer recent ones. Street View covers almost every building but Google's terms forbid building derived data from it.
 **Decision:** Open sources stay primary: Mapillary, KartaView, NYC tax photos, calibrated archetype recipes. Street View fills gaps only, read by the Chrome research session. Only the text recipe is kept; no images are saved, cached, published or shown on stream. Requests stay slow and bounded. Each recipe records its source, so Street-View-derived ones can be pulled if needed.
 **Why:** The owner accepted the terms risk for better per-building accuracy, while keeping exposure small and reversible. What we gave up: a fully clean data lineage.
+
+## 2026-10-31: Five Boroughs is non-commercial
+**Context:** Some data sources (Municipal Archives tax photos) license differently for commercial vs non-commercial use.
+**Decision:** The project is non-commercial, made for the public. No paid game, ads or sponsorship deals tied to it.
+**Why:** It's a public-interest project. This keeps the Archives photos license-exempt with a credit line, and fits CC BY-SA sources.
