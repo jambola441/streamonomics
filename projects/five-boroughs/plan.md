@@ -36,12 +36,15 @@ Rebuild every NYC building as close to the real one as the data allows, in the b
 - [x] Haiku facade recipe per building (JSON), voted across photos
 - [x] Builder library: recessed windows, cornices, stoops, storefronts, fire escapes as instanced geometry, baked glb LOD0–2
   - v1 runs live in the flyer (instanced, near the camera); baking to glb comes later
-- [ ] Pilot report: cost/building, coverage, accuracy, then neighborhood run
+- [x] Pilot report: cost/building, coverage, accuracy, then neighborhood run
+  - notes/dean100-pilot-report.md
   - Dean St 100-199: 72/72 faces, mean confidence 0.60, Sonnet ~80k tokens per face; Mapillary reaches ~5% of Brooklyn buildings at 5+ images
 
 ### L4: That exact building <!-- linear-milestone: -->
-- [ ] Render-and-compare loop against photos, max 3 rounds, score saved
-- [ ] Sonnet escalation for low-confidence buildings
+- [x] Render-and-compare loop against photos, max 3 rounds, score saved
+  - Dean St pilot: 10 houses, 3 rounds, mean 0.55 -> 0.66
+- [x] Sonnet escalation for low-confidence buildings
+  - Sonnet-first turned out cheaper per usable recipe than Haiku + escalation
 - [ ] Manhattan run with live cost-per-building ledger
 
 ### L5: Landmarks <!-- linear-milestone: -->
